@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wedding Of Patrick and Assumpta Time Acceleration</title>
+  <style>
+
+    body {
+      background: linear-gradient(to bottom, #57b8ff, #6f86d6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    @keyframes glow {
+  33% {
+    color:yellow;
+    text-shadow: 0 0 5px #fff, 0 0 10px #15d400, 0 0 15px #1c00d4;
+  }
+  40% {
+    color: orangered; /* Retain the original color */
+  }
+  35% {
+    color: green; /* Change to the new color */
+    text-shadow: 0 0 10px #fff, 0 0 20px #1c00d4, 0 0 30px #15d400;
+  }
+}
+
+.content {
+  text-align: center;
+  font-style: oblique;
+  font-size: 40px;
+  animation: glow 4s ease-in-out infinite alternate;
+}
+
+
+    #countdown {
+      font-size: 30px;
+      margin-top: 20px;
+      color: #ffffff;
+    }
+    table {
+      border-collapse: collapse;
+    }
+
+    th {
+      border: 1px ;
+      border color: #000;
+      padding: 10px;
+      text-align: center;
+    }
+
+    img {
+      width: 500px; /* Set the width of the image */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Ensure the image stays inline */
+      margin: 0 auto; /* Center the image horizontally */
+      opacity: 0.5; /* Reduce opacity on hover */
+      box-shadow: 2px 2px 5px rgba(5, 7, 0, 0.9); /* Add a subtle shadow */
+      transition: filter 0.3s ease; /* Smooth transition */
+      padding: 3%;   }
+  </style>
+</head>
+<body>
+    <table>
+        <th> <img src="https://i.ibb.co/bB6Hx0z/pazz.jpg" alt="pazz" border="0"></a><th>
+  <div class="content">
+    <span>&nbsp;&nbsp;&nbsp;Wedding Of Patrick and Assumpta</span>
+    <br>
+    <b>&nbsp;&nbsp;Time Acceleration</b>
+    <p id="countdown"></p>
+  </div>
+  </th>
+  </table>
+
+
+  <script>
+  // Target date (March 9, 2024)
+const targetDate = new Date('2024-03-09T00:00:00');
+
+function updateTime() {
+  const currentDate = new Date();
+  const timeDifference = targetDate - currentDate;
+
+  if (timeDifference > 0) {
+    // Update displayed time
+    document.getElementById('countdown').innerText = formatTime(timeDifference);
+  } else {
+    document.getElementById('countdown').innerText = 'Time\'s up!';
+    clearInterval(timer);
+  }
+}
+
+function formatTime(ms) {
+  // Convert milliseconds to days, hours, minutes, seconds
+  const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((ms % (30 * 60 * 60 * 24)) / (30 * 60 * 60));
+  const minutes = Math.floor((ms % (30 * 60 * 60)) / (30 * 60));
+  const seconds = Math.floor((ms % (30 * 60)) / 30);
+
+  return `${days}day ${hours}hours ${minutes}min ${seconds}sec`;
+}
+
+// Update time every second (simulating faster time)
+const timer = setInterval(updateTime, 20); // Adjust interval for faster simulation
+
+  </script>
+</body>
+</html>
