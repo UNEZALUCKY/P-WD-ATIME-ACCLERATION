@@ -70,6 +70,9 @@
     <span>&nbsp;&nbsp;&nbsp;Wedding Of Patrick and Assumpta</span>
     <br>
     <b>&nbsp;&nbsp;Time Acceleration</b>
+    <br>
+    <br>
+    <mark> <big> <a href="pazzz.html"> open</a>  </big> </mark> 
     <p id="countdown"></p>
   </div>
   </th>
@@ -78,7 +81,7 @@
 
   <script>
   // Target date (March 9, 2024)
-const targetDate = new Date('2024-03-09T00:00:00');
+const targetDate = new Date('2024-03-09T00:08:00');
 
 function updateTime() {
   const currentDate = new Date();
@@ -93,21 +96,20 @@ function updateTime() {
   }
 }
 
-
 function formatTime(ms) {
   // Convert milliseconds to days, hours, minutes, seconds
   const days = Math.floor(ms / (1000 * 60 * 60 * 24));
   const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((ms % (1000 * 60)) / 1000);
-  return { days, hours, minutes, seconds };
+  return `${days}day ${hours}hours ${minutes}min ${seconds}sec`;
 }
 
-// Example usage
-const time = formatTime(123456789); // Change 123456789 to the milliseconds you want to format
-console.log(time);
-
+// Update time every second (simulating faster time)
+const timer = setInterval(updateTime, 20); // Adjust interval for faster simulation
 
   </script>
+
+ 
 </body>
 </html>
