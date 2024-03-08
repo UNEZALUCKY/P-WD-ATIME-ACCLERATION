@@ -93,18 +93,20 @@ function updateTime() {
   }
 }
 
+
 function formatTime(ms) {
   // Convert milliseconds to days, hours, minutes, seconds
   const days = Math.floor(ms / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((ms % (30 * 60 * 60 * 24)) / (30 * 60 * 60));
-  const minutes = Math.floor((ms % (30 * 60 * 60)) / (30 * 60));
-  const seconds = Math.floor((ms % (30 * 60)) / 30);
-
-  return `${days}day ${hours}hours ${minutes}min ${seconds}sec`;
+  const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+  return { days, hours, minutes, seconds };
 }
 
-// Update time every second (simulating faster time)
-const timer = setInterval(updateTime, 20); // Adjust interval for faster simulation
+// Example usage
+const time = formatTime(123456789); // Change 123456789 to the milliseconds you want to format
+console.log(time);
+
 
   </script>
 </body>
